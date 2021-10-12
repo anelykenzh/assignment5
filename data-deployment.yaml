@@ -35,7 +35,7 @@ spec:
             secretKeyRef:
               name: data-secret
               key: username
-        image: anelykenzh/quotes-data:v2
+        image: anelykenzh/quotes-data:v1
         ports:
         - containerPort: 3306
         name: database

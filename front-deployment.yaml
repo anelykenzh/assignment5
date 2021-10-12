@@ -15,7 +15,7 @@ spec:
         app: front
     spec:
       containers:
-      - image: anelykenzh/quotes-front:v2
+      - image: anelykenzh/quotes-front:v1
         name: front
         ports:
         - containerPort: 3001
