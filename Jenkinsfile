@@ -1,4 +1,4 @@
-odTemplate(yaml: """
+podTemplate(yaml: """
 apiVersion: v1
 kind: Pod
 metadata:
@@ -24,17 +24,17 @@ spec:
 """
 ) {
     node(POD_LABEL) {
-			properties([
-				pipelineTriggers([
-				  [$class: 'GitHubPushTrigger'],
-			  	])
-			])
+	  properties([
+		pipelineTriggers([
+		  [$class: 'GitHubPushTrigger'],
+		  ])
+	  ])
       checkout scm
       container('jenkins-slave') {
         sh ''' 
         export AWS_DEFAULT_REGION=us-east-1
         make run
-        make fill-db
+	    make fill-db
         '''
       }
     }
