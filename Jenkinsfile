@@ -23,11 +23,11 @@ spec:
       privileged: true 
 """
 ) {
-       node(POD_LABEL) {
-	 properties([
-	   pipelineTriggers([
-             [$class: 'GitHubPushTrigger'],
-             ])
+    node(POD_LABEL) {
+      properties([
+	pipelineTriggers([
+          [$class: 'GitHubPushTrigger'],
+          ])
       ])
       checkout scm
       container('jenkins-slave') {
