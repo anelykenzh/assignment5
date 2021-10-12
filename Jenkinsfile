@@ -28,7 +28,7 @@ spec:
 	   pipelineTriggers([
              [$class: 'GitHubPushTrigger'],
              ])
-	  ])
+      ])
       checkout scm
       container('jenkins-slave') {
         sh ''' 
