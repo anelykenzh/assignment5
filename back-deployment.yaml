@@ -15,7 +15,7 @@ spec:
         app: api
     spec:
       containers:
-      - image: amanasangulov/quotes-back:v5
+      - image: anelykenzh/quotes-back:v2
         name: api
         env:
           - name: SQLALCHEMY_DATABASE_URI
