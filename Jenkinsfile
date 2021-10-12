@@ -23,18 +23,18 @@ spec:
       privileged: true 
 """
 ) {
-    node(POD_LABEL) {
-	  properties([
-		pipelineTriggers([
-		  [$class: 'GitHubPushTrigger'],
-		  ])
+       node(POD_LABEL) {
+	 properties([
+	   pipelineTriggers([
+             [$class: 'GitHubPushTrigger'],
+             ])
 	  ])
       checkout scm
       container('jenkins-slave') {
         sh ''' 
         export AWS_DEFAULT_REGION=us-east-1
         make run
-	    make fill-db
+	make fill-db
         '''
       }
     }
