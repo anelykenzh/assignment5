@@ -26,8 +26,8 @@ spec:
     node(POD_LABEL) {
       properties([
 	pipelineTriggers([
-          [$class: 'GitHubPushTrigger'],
-          ])
+	  [$class: 'GitHubPushTrigger'],
+	  ])
       ])
       checkout scm
       container('jenkins-slave') {
